@@ -15,8 +15,8 @@ This repository aims at providing simple examples on how to integrate Sismo Conn
 
 ```bash
 # clone the repository
-git clone https://github.com/sismo-core/sismo-connect-onchain-sample-project.git
-cd sismo-connect-onchain-sample-project
+git clone https://github.com/Deepcryptodive/Zero-Sybilness-Drop
+cd Zero-Sybilness-Drop
 ```
 
 ### Install dependencies
