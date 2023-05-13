@@ -1,8 +1,11 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.17;
 
-//NOTE: adding ERC-20 airdrop functionality to the Sismo ERC-21 zkDrop contract
+//This is an ERC20 contract that has added functionality to allow users to claim tokens if they are part of certain groups in Sismo Connect.
+
+//NOTE: this was done badding ERC-20 airdrop functionality to the Sismo ERC-21 zkDrop contract
 // It now results in ERC-20 tokens going to the verified user (instead of dropping an NFT).
+// It also checks if the user already claimed or not
 
 // import SismoConnect Solidity library
 import "sismo-connect-solidity/SismoLib.sol";
@@ -39,6 +42,8 @@ contract AirdropLevel2 is
         GROUP_ID_2 = groupId2;
     }
 
+    mapping(uint256 => bool) public hasClaimed;
+
 
     /**
      * @notice Mints an ERC20 on the address `to` thanks to a sismoConnect response containing a valid proof
@@ -74,20 +79,26 @@ contract AirdropLevel2 is
 
         // if the proof is valid, we mint the token to the address `to`
         // the tokenId is the anonymized userId of the user that claimed the token
-        // if the user calls the claimWithSismo function multiple times
-        // he will only be able to claim one token
         uint256 tokenId = result.getUserId(AuthType.VAULT);
+        //Adding a basic check to see if an address already claimed or not:
+        require(!hasClaimed[tokenId], "User has already claimed tokens. Nice try, but you've already had your share of the pie!");
+
         //TO DO: change to a  logical calculation for how many tokens to mint
         //Currently has a predefined claim amount
         //TO DO: make sure a user cannot claim twice
+        // if the user calls the claimWithSismo function multiple times
+        // he should only be able to claim one token
         uint256 claimAmount = 100;
         _mint(msg.sender, claimAmount);
 
-        // Now also returns the amount cclaimed (minted), in addition to the tokenID
+        hasClaimed[tokenId] = true;
+
+        // Now also returns the amount claimed (minted), in addition to the tokenID
          return (tokenId, claimAmount);
     }
 
-    // [TO DO] - CLeanup. The following doesn't make sense since ERC-20 doesnt got an override
+
+    // The following doesn't make sense since ERC-20 doesnt got an override. Kept for completeness.
     //function transfer(address, address, uint256) public virtual override {
     //    revert RegularERC20TransferFromAreNotAllowed();
     //}
