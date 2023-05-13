@@ -204,8 +204,14 @@ export default function ClaimAirdrop() {
             <div className="profile-container">
               <div>
                 <h2>Tokens Claimed</h2>
-                <b>Claimed amount: {tokenId?.id}</b>
-                {/* //TO DO: FIX with actual amount*/}
+                <b>Claimed amount: 100</b>
+                {/* //TO DO: FIX with actual amount
+                  For that, will have to define the
+                  which is being returned by the smart contract
+                  {tokenId?.amount}
+                  WOuld also be good to show the tokenID with:
+                  {tokenId?.id}
+                  */}
                 <p>Address used: {account}</p>
               </div>
             {
