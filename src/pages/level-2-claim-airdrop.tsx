@@ -127,7 +127,7 @@ export default function ClaimAirdrop() {
         {!tokenId && (
           <>
             <h1 style={{ marginBottom: 10 }}>
-              Claim a gated airdrop to Nouns DAO NFT and Gitcoin Passport holders
+              Claim a gated airdrop for unique humans
             </h1>
             {!isAirdropAddressKnown && (
               <p style={{ marginBottom: 40 }}>
@@ -137,7 +137,7 @@ export default function ClaimAirdrop() {
             )}
 
             {isAirdropAddressKnown ? (
-              <p style={{ marginBottom: 40 }}>You will receive the airdrop on {account}</p>
+              <p style={{ marginBottom: 40 }}>You will receive the tokens on {account}</p>
             ) : (
               !error && (
                 <button className="connect-wallet-button" onClick={() => connectWallet()}>
@@ -183,14 +183,14 @@ export default function ClaimAirdrop() {
                 onClick={async () => {
                   await claimWithSismo(responseBytes);
                 }}
-                value="Claim NFT"
+                value="Claim Fairdrop"
               >
                 {" "}
-                Claim NFT{" "}
+                Claim Fairdrop{" "}
               </button>
             )}
             {appState == APP_STATES.claimingNFT && (
-              <p style={{ marginBottom: 40 }}>Claiming NFT...</p>
+              <p style={{ marginBottom: 40 }}>Claiming tokens...</p>
             )}
           </>
         )}
@@ -204,7 +204,8 @@ export default function ClaimAirdrop() {
             <div className="profile-container">
               <div>
                 <h2>Tokens Claimed</h2>
-                <b>Claimed amount: {tokenId?.id}</b> //TO FIX with actual amount
+                <b>Claimed amount: {tokenId?.id}</b>
+                {/* //TO DO: FIX with actual amount*/}
                 <p>Address used: {account}</p>
               </div>
             {
