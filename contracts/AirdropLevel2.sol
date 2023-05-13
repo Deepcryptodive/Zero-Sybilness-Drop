@@ -1,9 +1,12 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.17;
 
+//NOTE: adding ERC-20 airdrop functionality to the Sismo ERC-21 zkDrop contract
+// It now results in ERC-20 tokens going to the verified user (instead of dropping an NFT).
+
 // import SismoConnect Solidity library
 import "sismo-connect-solidity/SismoLib.sol";
-import {ERC721} from "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import  {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 /**
  * @title ZKDropERC721
@@ -11,7 +14,7 @@ import {ERC721} from "@openzeppelin/contracts/token/ERC721/ERC721.sol";
  * @notice ZkDropERC721 is a contract that allows users to privately claim and transfer ERC721 tokens using SismoConnect.
  */
 contract AirdropLevel2 is
-    ERC721,
+    ERC20,
     SismoConnect // the contract inherits from SismoConnect
 {
     using SismoConnectHelper for SismoConnectVerifiedResult;
@@ -19,8 +22,9 @@ contract AirdropLevel2 is
     bytes16 public immutable GROUP_ID;
     bytes16 public immutable GROUP_ID_2;
 
-    error RegularERC721TransferFromAreNotAllowed();
-    error RegularERC721SafeTransferFromAreNotAllowed();
+    //Not necessary anymore:
+    //error RegularERC20TransferFromAreNotAllowed();
+    //error RegularERC20SafeTransferFromAreNotAllowed();
 
     constructor(
         string memory name,
@@ -28,17 +32,22 @@ contract AirdropLevel2 is
         bytes16 appId, // the appId of your sismoConnect app (you need to register your sismoConnect app on https://factory.sismo.io)
         bytes16 groupId, // the groupId from which users should be members of to claim the token
         bytes16 groupId2 // the groupId from which users should optionally be members of to claim the token
-    ) ERC721(name, symbol) SismoConnect(appId) {
+    )
+    ERC20(name,symbol)
+    SismoConnect(appId) {
         GROUP_ID = groupId;
         GROUP_ID_2 = groupId2;
     }
 
+
     /**
-     * @notice Claim a ERC721 on the address `to` thanks to a sismoConnect response containing a valid proof
+     * @notice Mints an ERC20 on the address `to` thanks to a sismoConnect response containing a valid proof
      *         with respect to the auth,claims and message signature requests
      * @param response the sismoConnect response from the Data Vault app in bytes
      */
-    function claimWithSismo(bytes memory response) public returns (uint256) {
+
+    function claimWithSismo(bytes memory response) public returns (uint256, uint256) {
+    //ORIGINAL:     function claimWithSismo(bytes memory response) public returns (uint256) {
         ClaimRequest[] memory claims = new ClaimRequest[](2);
         claims[0] = buildClaim({groupId: GROUP_ID});
         claims[1] = buildClaim({groupId: GROUP_ID_2});
@@ -52,12 +61,12 @@ contract AirdropLevel2 is
           signature: buildSignature({message: abi.encode(msg.sender)}),
           appId: appId
         });
-        
+
         // the verify function will check that the sismoConnectResponse proof is cryptographically valid
         // with respect to the auth, claims and message signature requests
         // i.e it checks that the user is the owner of a Sismo Data Vault
         // and that the user is a member of the groupId specified in the claim request
-        // and that the message signature is valid  
+        // and that the message signature is valid
         SismoConnectVerifiedResult memory result = verify({
           responseBytes: response,
           request: request
@@ -68,24 +77,20 @@ contract AirdropLevel2 is
         // if the user calls the claimWithSismo function multiple times
         // he will only be able to claim one token
         uint256 tokenId = result.getUserId(AuthType.VAULT);
-        _mint(msg.sender, tokenId);
+        //TO DO: change to a  logical calculation for how many tokens to mint
+        //Currently has a predefined claim amount
+        //TO DO: make sure a user cannot claim twice
+        uint256 claimAmount = 100;
+        _mint(msg.sender, claimAmount);
 
-        return tokenId;
+        // Now also returns the amount cclaimed (minted), in addition to the tokenID
+         return (tokenId, claimAmount);
     }
 
-    function transferFrom(address, address, uint256) public virtual override {
-        revert RegularERC721TransferFromAreNotAllowed();
-    }
+    // [TO DO] - CLeanup. The following doesn't make sense since ERC-20 doesnt got an override
+    //function transfer(address, address, uint256) public virtual override {
+    //    revert RegularERC20TransferFromAreNotAllowed();
+    //}
 
-    function safeTransferFrom(address, address, uint256) public virtual override {
-        revert RegularERC721SafeTransferFromAreNotAllowed();
-    }
 
-    function safeTransferFrom(address, address, uint256, bytes memory)
-        public
-        virtual
-        override
-    {
-        revert RegularERC721SafeTransferFromAreNotAllowed();
-    }
 }
