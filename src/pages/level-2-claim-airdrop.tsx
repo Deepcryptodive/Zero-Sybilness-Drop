@@ -197,16 +197,25 @@ export default function ClaimAirdrop() {
 
         {tokenId && (
           <>
-            <h1>Airdrop claimed!</h1>
+            <h1>Fairdrop claimed!</h1>
             <p style={{ marginBottom: 20 }}>
-              The user has chosen an address to receive the airdrop
+              The verified user has chosen an address to receive the token airdrop
             </p>
+            <div className="profile-container">
+              <div>
+                <h2>Tokens Claimed</h2>
+                <b>Claimed amount: {tokenId?.id}</b> //TO FIX with actual amount
+                <p>Address used: {account}</p>
+              </div>
+            {
+              /* Outdated code (we are not claiming NFTs anymore)
             <div className="profile-container">
               <div>
                 <h2>NFT Claimed</h2>
                 <b>tokenId: {tokenId?.id}</b>
                 <p>Address used: {account}</p>
-              </div>
+              </div>*/
+            }
             </div>
           </>
         )}
