@@ -1,6 +1,7 @@
-# Sismo Connect - Onchain Sample Project Repository
+# Zk Sybilness Drop - a ETHLisbon (ETHGlobal) hack
 
-This repository aims at providing simple examples on how to integrate Sismo Connect onchain while allowing you to test the integration locally as easily as possible.
+_Note: based on "Sismo Connect - Onchain Sample Project Repository"
+This repository aims at providing simple examples on how to integrate Sismo Connect onchain while allowing you to test the integration locally as easily as possible._
 
 ## Usage
 
