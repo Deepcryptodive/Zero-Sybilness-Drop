@@ -8,31 +8,22 @@ export default function Home() {
   return (
     <div className="container">
       <h1>
-        Sample Project
+        Zero Sybilness Drop
         <br />
-        Sismo Connect Onchain
       </h1>
+      <h3>
+      with Sismo Connect on Polygon
+      </h3>
       <section>
         <ul>
-          <li onClick={() => router.push("/level-0-claim-airdrop")}>
-            <h3>Claim an airdrop</h3>
-            <p>Sign an address with Sismo Connect where you wish to receive the airdrop</p>
-          </li>
-          <li onClick={() => router.push("/level-1-claim-airdrop")}>
-            <h3>Claim a gated airdrop</h3>
-            <p>
-              Sign an address with Sismo Connect where you wish to receive the airdrop while proving
-              that you own a Nouns DAO NFT
-            </p>
-          </li>
           <li onClick={() => router.push("/level-2-claim-airdrop")}>
             <h3>
-              Claim a gated airdrop anonymously <br />
-              while proving that you are human
+            Claim a gated airdrop anonymously <br />
+            while proving that you are human
             </h3>
             <p>
-              Sign an address with Sismo Connect where you wish to receive the airdrop while proving
-              that you own a Nouns DAO NFT and a Gitcoin Passport
+              Sign an address with Sismo Connect where you wish to receive the token airdrop while proving
+              that you are a unique individual. Supports Gitcoin Passport and other verification methods!
             </p>
           </li>
         </ul>
