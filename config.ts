@@ -4,7 +4,7 @@ import { privateKeyToAccount } from "viem/accounts";
 ///////////////////
 
 // Replace with your address to become eligible for the airdrops
-export const yourAddress = "0x855193BCbdbD346B423FF830b507CBf90ecCc90B"; // <--- Replace with your address
+export const yourAddress = "0xca4aD39F872E89Ef23eABd5716363Fc22513E147";
 
 ///////////////////
 
