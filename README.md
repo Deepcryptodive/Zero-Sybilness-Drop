@@ -1,7 +1,32 @@
 # Zk Sybilness Drop - a ETHLisbon (ETHGlobal) hack
 
-_Note: based on "Sismo Connect - Onchain Sample Project Repository"
-This repository aims at providing simple examples on how to integrate Sismo Connect onchain while allowing you to test the integration locally as easily as possible._
+This repository provides a showcase on how to integrate Sismo Connect onchain, while allowing you to test the integration locally as easily as possible.
+
+Note: based on the ["Sismo Connect - Onchain Sample Project Repository"](https://github.com/sismo-core/sismo-connect-onchain-sample-project)
+
+See actual hackathon submission for more info!
+
+## Screenshots
+![image](https://github.com/Deepcryptodive/Zero-Sybilness-Drop/assets/61325205/1d079fa6-4a27-439c-a843-86a97e7516d6)
+
+Start:
+![image](https://github.com/Deepcryptodive/Zero-Sybilness-Drop/assets/61325205/7cc0b588-1e1d-48db-9023-2ae93da09fa7)
+
+Authentication in Sismo Vault (privacy-preserving):
+![image](https://github.com/Deepcryptodive/Zero-Sybilness-Drop/assets/61325205/dc9f823b-6705-48a4-b0c5-148939f72624)
+
+Claiming token airdrop into address of choice:
+![image](https://github.com/Deepcryptodive/Zero-Sybilness-Drop/assets/61325205/bb155a34-5515-44ea-8739-dec946e53f0e)
+
+Succesfull claim:
+![image](https://github.com/Deepcryptodive/Zero-Sybilness-Drop/assets/61325205/5b4ac266-f972-4800-921c-d01faab19e56)
+
+When trying to claim for the second time with the same account, or any other account that is under control of the same user (via their Sismo Vault):
+![image](https://github.com/Deepcryptodive/Zero-Sybilness-Drop/assets/61325205/cd8de31c-ace6-49e4-8b13-1ffcafb63d83)
+
+
+
+
 
 ## Usage
 
@@ -30,6 +55,8 @@ yarn
 foundryup
 forge install
 ```
+
+Note: sometimes it is also needed to add ```yarn add nodemon next```
 
 ### Launch your local fork by forking Mumbai with Anvil
 
@@ -64,7 +91,7 @@ To be eligible for the airdrops, you just need to add your address in [`./config
 
 ```ts
 // Replace with your address to become eligible for the airdrops
-export const yourAddress = "0x855193BCbdbD346B423FF830b507CBf90ecCc90B"; // <--- Replace with your address
+export const yourAddress = ""; // <--- Replace with your address
 
 ...
 ```
