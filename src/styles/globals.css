@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: Roboto-Medium, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  font-family: Poppins, Roboto-Medium, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -11,7 +11,7 @@ body {
 }
 
 html {
-  background: linear-gradient(285.51deg, #193970 -75.32%, #12203d 76.45%);
+  background: linear-gradient(285.51deg, #465992 -5.32%, #72CBC3 76.45%);
   color: #ffffff;
 }
 
@@ -46,13 +46,13 @@ h1 {
 h2 {
   font-size: 28px;
   margin-bottom: 20px;
-  color: white;
+  color: #FBA35A;
 }
 
 h3 {
   font-size: 20px;
   margin-bottom: 5px;
-  color: white;
+  color: #FFCC66;
 }
 
 section {
@@ -113,7 +113,7 @@ li:before {
 }
 
 li:nth-child(1):before {
-  content: "level 0";
+  content: "START";
 }
 
 li:nth-child(2):before {
@@ -202,7 +202,7 @@ input:focus {
   padding: 20px;
   border: 1px solid white;
   border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #465992;
   backdrop-filter: blur(10px);
 }
 
@@ -212,8 +212,8 @@ input:focus {
   font-size: 16px;
   font-weight: bold;
   text-align: center;
-  color: #000;
-  background-color: #fff;
+  color: #fff;
+  background-color: #fba35a;
   border: none;
   border-radius: 4px;
   cursor: pointer;
