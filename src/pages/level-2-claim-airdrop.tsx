@@ -36,8 +36,7 @@ const contractAddress = transactions[0].contractAddress;
 // You can find more information about the configuration here: https://docs.sismo.io/build-with-sismo-connect/technical-documentation/react
 
 export const sismoConnectConfig: SismoConnectClientConfig = {
-  appId: "0xf4977993e52606cfd67b7a1cde717069",
-  //Note, should change to my own appID: 0x6aa6b65b0f51e64729bc06022e76127b - but for some reason was buggy
+  appId: "0x6aa6b65b0f51e64729bc06022e76127b", //added custom appId
   devMode: {
     enabled: true,
     devGroups,
