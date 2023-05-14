@@ -11,9 +11,8 @@ export default function Home() {
         Zero Sybilness Drop
         <br />
       </h1>
-      <h3>
-      with Sismo Connect on Polygon
-      </h3>
+      <section>
+      </section>
       <section>
         <ul>
           <li onClick={() => router.push("/level-2-claim-airdrop")}>
@@ -22,12 +21,15 @@ export default function Home() {
             while proving that you are human
             </h3>
             <p>
-              Sign an address with Sismo Connect where you wish to receive the token airdrop while proving
-              that you are a unique individual. Supports Gitcoin Passport and other verification methods!
+              Select any address where you wish to receive the token airdrop while proving
+              that you are a unique individual with Sismo Connect. Supports Gitcoin Passport and other verification methods!
             </p>
           </li>
         </ul>
       </section>
+      <h3>
+      built with Sismo Connect on Polygon
+      </h3>
     </div>
   );
 }
