@@ -26,7 +26,7 @@ Users can claim their airdrop on the frontend by connecting their wallet, privat
 
 The application is deployed on the Polygon Mumbai testnet, using Foundry, and uses the viem library to interact with this EVM blockchain. It leverages the Sismo Connect button from the Sismo Connect React library to streamline user interaction.
 
-In conclusion, Zero Sybilness Drop demonstrates a practical application of privacy-preserving technologies and decentralized identity verification in promoting fairness in token distribution. It's a pioneering solution, illustrating the potential of blockchain technology when combined with stringent, privacy-aware verification processes.
+**In conclusion, Zero Sybilness Drop demonstrates a practical application of privacy-preserving technologies and decentralized identity verification in promoting fairness in token distribution. It's a pioneering solution, illustrating the potential of blockchain technology when combined with stringent, privacy-aware verification processes.**
 
 
 ## Repository
