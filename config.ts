@@ -10,8 +10,8 @@ export const yourAddress = "0xca4aD39F872E89Ef23eABd5716363Fc22513E147";
 
 export const devGroups = [
   {
-    // Nouns DAO NFT Holders group : https://factory.sismo.io/groups-explorer?search=0x311ece950f9ec55757eb95f3182ae5e2
-    groupId: "0x311ece950f9ec55757eb95f3182ae5e2",
+    // verified-human group: https://github.com/sismo-core/sismo-hub/blob/main/group-generators/generators/verified-human/index.ts
+    groupId: "0x349d8bd135bd903a633464f9b303c902",
     data: [
       // your address is added here so you can test the airdrops
       yourAddress,
@@ -21,8 +21,8 @@ export const devGroups = [
     ],
   },
   {
-    // Gitcoin Passport group : https://factory.sismo.io/groups-explorer?search=0x1cde61966decb8600dfd0749bd371f12
-    groupId: "0x1cde61966decb8600dfd0749bd371f12",
+    // GHO holders Goerli group: https://github.com/sismo-core/sismo-hub/blob/main/group-generators/generators/gho-holders-goerli/index.ts
+    groupId: "0xc6ae11a89cc5cf7a34dac84c7d7b8eff",
     data: [
       // your address is added here so you can test the airdrops
       yourAddress,
