@@ -20,7 +20,7 @@ Eligibility for the Zero Sybilness airdrop is determined by a meticulously compi
 - Anima “proof of personhood“ NFT holders
 - Humanbound verified users
 
-This aggregation exemplifies the breadth of unique human users that are recognized and eligible for the Zero Sybilness Drop across different chains including Optimism, Arbitrum, BSC and Polygon. As a testament to the project's commitment to fairness and accessibility, over 820,000 addresses are eligible for the showcase airdrop.
+This aggregation exemplifies the breadth of unique human users that are recognized and eligible for the Zero Sybilness Drop across different chains including Optimism, Arbitrum, BSC, Ethereum and Polygon. As a testament to the project's commitment to fairness and accessibility, over 820,000 addresses are eligible for the showcase airdrop.
 
 Users can claim their airdrop on the frontend by connecting their wallet, privately verifying their identity through Sismo Connect, and signing a transaction with their address. The interface provides real-time feedback about the state of the claim, such as whether the user is eligible, the claim is in progress, or the tokens have been successfully claimed.
 
