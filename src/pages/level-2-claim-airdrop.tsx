@@ -127,11 +127,14 @@ export default function ClaimAirdrop() {
         {!tokenId && (
           <>
             <h1 style={{ marginBottom: 10 }}>
-              Claim a gated airdrop for unique humans
+              Claim a gated Fairdrop <br /> for unique humans
             </h1>
+            <h2>
+             that are holding GHO stablecoins
+            </h2>
             {!isAirdropAddressKnown && (
               <p style={{ marginBottom: 40 }}>
-                Select on which address you want to receive the airdrop and sign it with Sismo
+                Chose on which address you want to receive the airdrop and sign it with Sismo
                 Connect
               </p>
             )}
@@ -141,7 +144,7 @@ export default function ClaimAirdrop() {
             ) : (
               !error && (
                 <button className="connect-wallet-button" onClick={() => connectWallet()}>
-                  Connect Wallet
+                  Connect Receiving Wallet
                 </button>
               )
             )}
@@ -179,6 +182,7 @@ export default function ClaimAirdrop() {
             {/** Simple button to call the smart contract with the response as bytes */}
             {appState == APP_STATES.receivedProof && (
               <button
+              style={{ padding: "20px", fontSize: "20px", width: "100%", height: "100%"}}
                 className="connect-wallet-button"
                 onClick={async () => {
                   await claimWithSismo(responseBytes);
@@ -186,7 +190,7 @@ export default function ClaimAirdrop() {
                 value="Claim Fairdrop"
               >
                 {" "}
-                Claim Fairdrop{" "}
+                Congrats you are eligible! Claim now!{" "}
               </button>
             )}
             {appState == APP_STATES.claimingNFT && (
@@ -212,7 +216,7 @@ export default function ClaimAirdrop() {
                   WOuld also be good to show the tokenID with:
                   {tokenId?.id}
                   */}
-                <p>Address used: {account}</p>
+                <p>Receiving address: {account}</p>
               </div>
             {
               /* Outdated code (we are not claiming NFTs anymore)
